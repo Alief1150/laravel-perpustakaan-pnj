@@ -1,0 +1,25 @@
+<svg width="900" height="240" viewBox="0 0 900 240" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="900" y2="240" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#FFF7D6"/>
+      <stop offset="1" stop-color="#FDE68A"/>
+    </linearGradient>
+    <linearGradient id="accent" x1="60" y1="40" x2="180" y2="200" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#92400E"/>
+      <stop offset="1" stop-color="#D97706"/>
+    </linearGradient>
+  </defs>
+  <rect x="4" y="4" width="892" height="232" rx="42" fill="url(#bg)" stroke="#F59E0B" stroke-width="8"/>
+  <g transform="translate(56 44)">
+    <path d="M24 24C24 17.3726 29.3726 12 36 12H112C138.51 12 160 33.4903 160 60V160C160 166.627 154.627 172 148 172H56C42.7452 172 32 161.255 32 148V24H24Z" fill="url(#accent)"/>
+    <path d="M54 44C54 37.3726 59.3726 32 66 32H130C143.255 32 154 42.7452 154 56V160C154 166.627 148.627 172 142 172H78C64.7452 172 54 161.255 54 148V44Z" fill="#FFFDF5"/>
+    <rect x="72" y="54" width="56" height="8" rx="4" fill="#F59E0B"/>
+    <rect x="72" y="74" width="44" height="8" rx="4" fill="#FDE68A"/>
+    <rect x="72" y="94" width="52" height="8" rx="4" fill="#F59E0B"/>
+    <rect x="72" y="114" width="36" height="8" rx="4" fill="#FDE68A"/>
+    <rect x="72" y="134" width="48" height="8" rx="4" fill="#F59E0B"/>
+    <path d="M42 58H54V152H42C35.3726 152 30 146.627 30 140V70C30 63.3726 35.3726 58 42 58Z" fill="#7C2D12"/>
+  </g>
+  <text x="250" y="112" fill="#111827" font-family="Inter, Segoe UI, Arial, sans-serif" font-size="52" font-weight="800">Perpustakaan PNJ</text>
+  <text x="250" y="160" fill="#92400E" font-family="Inter, Segoe UI, Arial, sans-serif" font-size="24" font-weight="600">Katalog digital kampus untuk mencari, membaca, dan mengunduh koleksi buku</text>
+</svg>
