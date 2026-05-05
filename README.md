@@ -254,19 +254,83 @@ Catatan:
 
 ## 🐳 Docker
 
-Repositori ini sudah menyertakan Docker Compose untuk environment lokal dengan MySQL persistensi volume `db-data`.
+Repositori ini sudah menyertakan Docker Compose untuk environment lokal dengan MySQL dan volume persisten `db-data`.
+
+### Prerequisites
+
+- Docker Engine + Docker Compose Plugin di Linux
+- Docker Desktop di Windows (disarankan dengan WSL2)
+
+### Persiapan file environment
+
+Sebelum menjalankan container, salin file environment dan sesuaikan isinya untuk mode Docker:
+
+```bash
+cp .env.example .env
+```
+
+Pastikan nilai berikut dipakai untuk mode Docker:
+
+```env
+APP_URL=http://localhost:8000
+DB_CONNECTION=mysql
+DB_HOST=db
+DB_PORT=3306
+DB_DATABASE=perpustakaan_pnj
+DB_USERNAME=perpustakaan_pnj
+DB_PASSWORD=secret
+```
+
+### Setup Docker di Linux
+
+1. Install Docker dan Docker Compose plugin.
+2. Clone repo dan masuk ke folder project.
+3. Copy `.env.example` ke `.env` dan update konfigurasi Docker seperti di atas.
+4. Jalankan container:
 
 ```bash
 docker compose up --build
 ```
 
-Service aplikasi akan berjalan di `http://localhost:8000`.
+5. Buka aplikasi di:
 
-Jika ingin menjalankan migrasi manual di container:
+```text
+http://localhost:8000
+```
+
+Karena command container sudah menjalankan `storage:link`, `migrate`, dan `seed`, aplikasi biasanya langsung siap dipakai setelah service hidup.
+
+Jika ingin menjalankan ulang migrasi secara manual di container:
 
 ```bash
 docker compose exec app php artisan migrate --seed
 ```
+
+### Setup Docker di Windows
+
+1. Install Docker Desktop dan aktifkan WSL2 backend jika tersedia.
+2. Buka PowerShell, Windows Terminal, atau Git Bash.
+3. Clone repo dan masuk ke folder project.
+4. Salin `.env.example` menjadi `.env`, lalu pastikan konfigurasi Docker sudah benar.
+5. Jalankan service:
+
+```powershell
+docker compose up --build
+```
+
+6. Akses aplikasi melalui browser:
+
+```text
+http://localhost:8000
+```
+
+Jika folder storage atau database perlu di-reset, jalankan:
+
+```powershell
+docker compose down -v
+```
+
+Lalu start ulang dengan `docker compose up --build`.
 
 ## 🔑 Demo login
 
